@@ -1,19 +1,18 @@
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
+import CloseIcon from "../assets/image/close.png";
 import NgMenuIcon from "../assets/image/menu.png";
 import NgLogo from "../assets/image/ngmusic.png";
-import CloseIcon from "../assets/image/close.png";
 import NgSearchIcon from "../assets/image/search.png";
+import Button from "../components/Button";
+import Card from "../components/Card";
 import Image from "../components/Image";
+import SearchInput from "../components/SearchInput";
 import Text from "../components/Text";
 import useDebounce from "../hook/useDebounce";
 import { useListMusics } from "../services/musics/useMusic";
 import "./ListMusic.css";
-import Card from "../components/Card";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
-import SearchInput from "../components/SearchInput";
-import Button from "../components/Button";
-import { watch } from "fs";
 
 function ListMusic() {
   const [isSearch, setIsSearch] = useState(false);
