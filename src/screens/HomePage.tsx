@@ -33,7 +33,7 @@ function HomePage() {
               type="text"
               required
               showIcon={false}
-              className="w-full p-4 ps-10 text-sm text-ng-blue-gray text-center rounded-full bg-white"
+              className="w-full p-4 text-sm text-ng-blue-gray text-center rounded-full bg-white"
             />
           )}
         />
