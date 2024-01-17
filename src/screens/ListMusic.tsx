@@ -10,7 +10,7 @@ import "./ListMusic.css";
 import Card from "../components/Card";
 
 function ListMusic() {
-  const { control, watch: watchSearch } = useForm({
+  const { watch: watchSearch } = useForm({
     defaultValues: {
       search: "Json Mraz",
     },
@@ -18,11 +18,7 @@ function ListMusic() {
 
   const debounceFetchShippingComps = useDebounce(watchSearch("search"), 1000);
 
-  const {
-    data: dataMusics,
-    isPending: isPendingMusics,
-    refetch: refetchMusics,
-  } = useListMusics({
+  const { data: dataMusics, isPending: isPendingMusics } = useListMusics({
     query: {
       term: debounceFetchShippingComps,
     },
@@ -33,7 +29,6 @@ function ListMusic() {
       },
     },
   });
-  console.log("@dataMusics", dataMusics);
 
   return (
     <div className="container">
@@ -44,11 +39,8 @@ function ListMusic() {
           <Image src={NgSearchIcon} alt="ng-music-logo" />
         </div>
 
-        <div className="p-7 flex justify-center items-center">
-          <Text
-            label="Search result for : "
-            className="font-roboto text-sm font-normaltext-[#334155]"
-          />
+        <div className="px-7 py-4 flex justify-center items-center">
+          <Text label="Search result for : " className="font-roboto text-sm text-[#334155]" />
 
           <Text
             label={watchSearch("search")}
@@ -56,18 +48,23 @@ function ListMusic() {
           />
         </div>
 
-        <div className="p-7">
-          {dataMusics instanceof Array
-            ? dataMusics?.map((data: any, index: number) => {
-                return (
-                  <Card
-                    onClick={() => (window.open(data.trackViewUrl), "_blank")}
-                    key={index}
-                    {...data}
-                  />
-                );
-              })
-            : null}
+        <div className="px-7 py-0">
+          {isPendingMusics ? (
+            <Text
+              label="Loading..."
+              className="font-roboto font-normal text-center text-[#334155]"
+            />
+          ) : dataMusics instanceof Array ? (
+            dataMusics?.map((data: any, index: number) => {
+              return (
+                <Card
+                  onClick={() => window.open(data.trackViewUrl, "_blank")}
+                  key={index}
+                  {...data}
+                />
+              );
+            })
+          ) : null}
         </div>
       </div>
     </div>
