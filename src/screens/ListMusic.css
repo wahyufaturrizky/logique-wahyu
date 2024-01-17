@@ -16,7 +16,7 @@
   border-radius: 10px;
   position: absolute;
   top: 50%;
-  overflow: hidden;
+  overflow: scroll;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f8fafc;
