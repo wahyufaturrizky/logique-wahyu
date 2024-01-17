@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Layout from './screens/layout';
-import ErrorPage from "./screens/error-page";
-import HomePage from './screens/HomePage';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import React, { useEffect } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './App.css';
+import HomePage from './screens/HomePage';
+import ErrorPage from "./screens/error-page";
+import Layout from './screens/layout';
 
 
 const queryClient = new QueryClient();

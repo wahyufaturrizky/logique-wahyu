@@ -1,20 +1,27 @@
-import Text from "../components/Text";
+import Image from "../components/Image";
+import NgMusicLogo from "../assets/image/ng-music.png";
+import Button from "../components/Button";
 
 function HomePage() {
-  const user = JSON.parse(localStorage.getItem("user") as string);
-
   return (
-    <div className="p-4 sm:ml-64 bg-[#BDBDBD] h-screen">
-      <div className="bg-white p-4 rounded-lg">
-        <Text label="Dashboard" className="font-roboto text-2xl font-bold" />
+    <div className="flex min-h-full h-dvh flex-1 flex-col justify-center lg:px-8 bg-gradient-to-r from-cyan-500 to-blue-500">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm flex justify-center h-3/4 items-center">
+        <Image className="mx-auto h-auto w-auto" src={NgMusicLogo} alt="ng-music-logo" />
+      </div>
+      <div className="px-[40px] py-[20px] h-1/4">
+        <Button
+          label="Artist / Album / Title"
+          onClick={() => {}}
+          type="button"
+          className="flex items-center w-full mb-4 justify-center rounded-full bg-white px-3 py-3 text-sm font-semibold leading-6 text-ng-blue-gray shadow-sm"
+        />
 
-        <div className="flex flex-col m-14 items-center justify-center h-96 rounded bg-[#F2F2F2]">
-          <Text label="Selamat Datang" className="font-roboto text-4xl font-bold text-[#828282]" />
-          <Text
-            label={user?.data?.data?.user.name}
-            className="font-roboto text-2xl font-bold text-[#BDBDBD]"
-          />
-        </div>
+        <Button
+          label="Artist / Album / Title"
+          onClick={() => {}}
+          type="button"
+          className="flex items-center w-full justify-center rounded-full bg-white px-3 py-3 text-sm font-semibold leading-6 text-ng-blue-gray shadow-sm"
+        />
       </div>
     </div>
   );
