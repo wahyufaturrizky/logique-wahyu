@@ -2,6 +2,7 @@ import { ChangeEventHandler, FocusEventHandler } from "react";
 
 export interface InputSearchInterface {
   className: string;
+  showIcon?: boolean;
   name: string;
   type: string;
   autoComplete?: string;

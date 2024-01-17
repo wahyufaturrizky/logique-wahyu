@@ -8,11 +8,16 @@ import useDebounce from "../hook/useDebounce";
 import { useListMusics } from "../services/musics/useMusic";
 import "./ListMusic.css";
 import Card from "../components/Card";
+import { useLocation } from "react-router-dom";
 
 function ListMusic() {
+  const { state } = useLocation();
+
+  const { search } = state;
+
   const { watch: watchSearch } = useForm({
     defaultValues: {
-      search: "Json Mraz",
+      search: search,
     },
   });
 
