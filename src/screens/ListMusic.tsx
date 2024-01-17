@@ -33,7 +33,7 @@ function ListMusic() {
   return (
     <div className="container">
       <div className="header">
-        <div className="flex justify-between p-7">
+        <div className="flex justify-between p-14">
           <Image src={NgMenuIcon} alt="ng-music-logo" />
           <Image src={NgLogo} alt="ng-music-logo" />
           <Image src={NgSearchIcon} alt="ng-music-logo" />
