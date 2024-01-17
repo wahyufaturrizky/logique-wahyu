@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// "author": "https://www.linkedin.com/in/wahyu-fatur-rizky"
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
