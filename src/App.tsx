@@ -1,12 +1,12 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import React, { useEffect } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import './App.css';
-import HomePage from './screens/HomePage';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import React, { useEffect } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import HomePage from "./screens/HomePage";
 import ErrorPage from "./screens/error-page";
-import Layout from './screens/layout';
-
+import Layout from "./screens/layout";
+import ListMusic from "./screens/ListMusic";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "home-page",
         element: <HomePage />,
+      },
+      {
+        path: "list-music",
+        element: <ListMusic />,
       },
     ],
   },
