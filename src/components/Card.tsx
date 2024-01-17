@@ -9,11 +9,11 @@ const Card = ({ ...props }: CardInterface) => {
   return (
     <div className="p-2.5 rounded-lg bg-white shadow-xl mb-4" onClick={onClick}>
       <div className="flex">
-        <div className="h-1/3">
+        <div className="w-1/3">
           <Image className="rounded-lg" src={artworkUrl100} alt="ng-music-logo" />
         </div>
 
-        <div className="h-2/3 px-4">
+        <div className="w-2/3 px-4">
           <Text label={artistName} className="font-roboto text-xs font-medium text-[#334155]" />
 
           <Text label={trackName} className="font-roboto text-sm font-bold text-[#334155]" />
